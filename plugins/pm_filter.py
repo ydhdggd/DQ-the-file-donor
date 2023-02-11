@@ -90,8 +90,8 @@ async def next_page(bot, query):
     if not files:
         return
     settings = await get_settings(query.message.chat.id)
-    if 'is_shortlink' in settings.keys():
-        ENABLE_SHORTLINK = if settings['is_shortlink']
+    if 'is_shortlink' int settings.keys():
+        ENABLE_SHORTLINK = settings['is_shortlink']
     else:
         await save_group_settings(query.message.chat.id, 'is_shortlink', True)
         ENABLE_SHORTLINK = True
@@ -1319,8 +1319,8 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
     settings = await get_settings(message.chat.id)
-    if 'is_shortlink' in settings.keys():
-        ENABLE_SHORTLINK = if settings['is_shortlink']
+    if 'is_shortlink' int settings.keys():
+        ENABLE_SHORTLINK = settings['is_shortlink']
     else:
         await save_group_settings(message.chat.id, 'is_shortlink', True)
         ENABLE_SHORTLINK = True
