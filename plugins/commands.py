@@ -578,7 +578,7 @@ async def settings(client, message):
             [
                 InlineKeyboardButton(
                     'Aᴜᴛᴏ-Fɪʟᴛᴇʀ',
-                    callback_data=f'setgs#auto_ffilter#{settings["auto_ffilter"]}#{grp_id}',
+                    callback_data=f'setgs#auto_ffilter#{settings["auto_ffilter"]}#{str(grp_id)}'),
                 ),
                 InlineKeyboardButton(
                     '✔ Oɴ' if settings["auto_ffilter"] else '✘ Oғғ',
